@@ -1,0 +1,75 @@
+.hero-banner{
+    width: 100%;
+    height: 100dvh;
+    &__slider{
+        height: 100%;
+    }
+    &__item{
+        background-position: center center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        width: 100%;
+        height: 100%;
+        position: relative;
+        &::before{
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: rgb(32 32 32 / 82.5%);
+            opacity: 0.8;
+        }
+    }
+    &__box{
+        position: absolute;
+        z-index: 1;
+        top: calc(50% + 70px);
+        transform: translateY(-50%);
+        @include max1024{
+            top: 150px;
+            transform: unset;
+        }
+        &::before{
+            content: "";
+            position: absolute;
+            width: 900px;
+            height: 100%;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+            background: linear-gradient(90deg, #202020 0%, #202020 82.5%);
+            clip-path: polygon(0 0, 100% 0, 63% 100%, 0% 100%);
+            opacity: 0.5;
+            @include max1024{
+                width: calc(100% - 15px);
+                clip-path: polygon(0 0, 100% 0, 100% 100%, 0 66%);
+            }
+        }
+        .heading-title{
+            padding: 55px 0;
+            margin-bottom: 0;
+            font-family: "Roboto", Sans-serif;
+            font-size: 68px;
+            line-height: 1.2;
+            letter-spacing: 4.5px;
+            color: #fff;
+            z-index: 1;
+            font-weight: 900;
+            position: relative;
+            max-width: 660px;
+            margin-left: 210px;
+            text-transform: uppercase;
+            @include min1920{
+                padding: 100px 0;
+                font-size: 90px;
+                max-width: 860px;
+            }
+            @include max1024{
+                    padding: 40px 20px 20px;
+                    font-size: 40px;
+                    letter-spacing: 2.4px;
+                    margin-left: 0;
+            }
+        }
+    }
+}

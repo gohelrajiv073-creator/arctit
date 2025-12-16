@@ -1,0 +1,50 @@
+@mixin flexbox{
+    display: flex;
+}
+
+@mixin flexAlign($arg: null) {
+  @if $arg != null {
+    align-items: $arg;
+  } @else {
+    align-items: center;
+  }
+}
+
+@mixin flexJustify($arg: null){
+    @if $arg != null{
+        justify-content: $arg;
+    } @else{
+        justify-content: center;
+    }
+}
+
+
+@mixin min992{
+    @media only screen and (min-width: 992px) {
+        @content;
+    }
+}
+
+@mixin min1920{
+    @media only screen and (min-width: 1920px) {
+        @content;
+    }
+}
+
+@mixin max1024{
+    @media only screen and (max-width: 1024px) {
+        @content;
+    }
+}
+
+@mixin max991{
+    @media only screen and (max-width: 991px) {
+        @content;
+    }
+}
+
+@mixin max767{
+    @media only screen and (max-width: 767px) {
+        @content;
+    }
+}
